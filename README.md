@@ -1,4 +1,4 @@
-KGDet: Keypoint-Guided Fashion Detection (AAAI 2021)
+# KGDet: Keypoint-Guided Fashion Detection (AAAI 2021)
 
 ## Installation
 To avoid problems, please install this repo in a pure `venv` or `conda` virtual environment.
