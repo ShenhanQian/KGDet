@@ -1,0 +1,5 @@
+work_dirs
+data/*
+*.pyc
+deepfashion2_api
+.vscode
