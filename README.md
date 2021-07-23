@@ -1,4 +1,8 @@
 # KGDet: Keypoint-Guided Fashion Detection (AAAI 2021)
+This is an official implementation of the AAAI-2021 paper "[KGDet: Keypoint-Guided Fashion Detection](https://ojs.aaai.org/index.php/AAAI/article/view/16346)".
+
+![Architecture](img/arch.png)
+
 
 ## Installation
 To avoid problems, please install this repo in a pure `venv` or `conda` virtual environment.
@@ -48,7 +52,9 @@ ln -s <root dir of DeepFashion2> data/deepfashion2
 
 We provide a subset (32 images) of DeepFashion2 to enable quick-experiment.
 
+#### Checkpoints
 
+The checkpoints can be fetched from this OneDrive [link](https://shanghaitecheducn-my.sharepoint.com/:f:/g/personal/qianshh_shanghaitech_edu_cn/EuFp4lJL_vRCpHTogM9bp9MB9WvyromlNMozlM-WIPGBvg?e=jMcJ8P).
 
 ## Experiments
 
@@ -111,8 +117,10 @@ Test RepPoints with 1 gpu
 
 - Results files will be stored in `work_dirs/result_RepPoints.json`.
 
-
-
 ## Customization
 
 If you would like to run our model on your own data, you can imitate the structure of the demo_dataset (a image directory plus a JSON file), and adjust the arguments in the configuration file.
+
+## Acknowledgment
+
+This repo is built upon [RepPoints](https://github.com/microsoft/RepPoints) and [mmdetection](https://github.com/open-mmlab/mmdetection).
