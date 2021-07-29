@@ -64,7 +64,7 @@ The checkpoints can be fetched from this OneDrive [link](https://shanghaitechedu
 
 ### Demo
 
-Test KGDet with 1 gpu
+Test with 1 gpu
 
 ```shell
 ./mmdetection/tools/dist_test.sh configs/kgdet_moment_r50_fpn_1x-demo.py checkpoints/KGDet_epoch-12.pth 1 --json_out work_dirs/demo_KGDet.json --eval bbox keypoints
@@ -75,9 +75,7 @@ Test KGDet with 1 gpu
 
 ### DeepFashion2
 
-#### KGDet
-
-**Train with 4 gpus**
+Train with 4 gpus
 
 ```shell
 ./mmdetection/tools/dist_train.sh configs/kgdet_moment_r50_fpn_1x-deepfashion2.py 4 --validate --work_dir work_dirs/TRAIN_KGDet
@@ -86,7 +84,7 @@ Test KGDet with 1 gpu
 - The running log and checkpoints will be stored in the `work_dirs/TRAIN_KGDet` directory according to the  argument `--work_dir`.
 - `--validate` evokes a validation section after each training epoch.
 
-**Test with 4 gpus**
+Test with 4 gpus
 
 ```shell
 ./mmdetection/tools/dist_test.sh configs/kgdet_moment_r50_fpn_1x-deepfashion2.py checkpoints/KGDet_epoch-12.pth 4 --json_out work_dirs/result_KGDet.json --eval bbox keypoints
