@@ -10,7 +10,6 @@ from .mask_rcnn import MaskRCNN
 from .mask_scoring_rcnn import MaskScoringRCNN
 from .reppoints_detector import RepPointsDetector
 from .reppoints_detector_kp import RepPointsDetectorKp
-from .reppoints_detector_kp_gt import RepPointsDetectorKpGT
 from .retinanet import RetinaNet
 from .rpn import RPN
 from .single_stage import SingleStageDetector
@@ -20,5 +19,5 @@ __all__ = [
     'BaseDetector', 'SingleStageDetector', 'TwoStageDetector', 'RPN',
     'FastRCNN', 'FasterRCNN', 'MaskRCNN', 'CascadeRCNN', 'HybridTaskCascade',
     'DoubleHeadRCNN', 'RetinaNet', 'FCOS', 'GridRCNN', 'MaskScoringRCNN',
-    'RepPointsDetector', 'RepPointsDetectorKp', 'RepPointsDetectorKpGT'
+    'RepPointsDetector', 'RepPointsDetectorKp'
 ]

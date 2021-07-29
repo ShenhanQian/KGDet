@@ -96,7 +96,8 @@ def make_cuda_ext(name, module, sources):
                 '-D__CUDA_NO_HALF_OPERATORS__',
                 '-D__CUDA_NO_HALF_CONVERSIONS__',
                 '-D__CUDA_NO_HALF2_OPERATORS__',
-        })
+                ]
+            })
 
 
 def make_cython_ext(name, module, sources):
