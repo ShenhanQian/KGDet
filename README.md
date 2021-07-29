@@ -73,14 +73,6 @@ Test KGDet with 1 gpu
 - Results files will be stored as `work_dirs/demo_KGDet.json`.
 - If you only need the prediction results, you can drop `--eval` and its arguments.
 
-Test RepPoints with 1 gpu
-
-```shell
-./mmdetection/tools/dist_test.sh configs/reppoints_moment_r50_fpn_1x-demo.py checkpoints/RepPointsHeadKpPlus-no_kp_loss_epoch_12.pth 1 --json_out work_dirs/demo_RepPoints.json --eval bbox
-```
-
-- Results files will be stored as `work_dirs/demo_RepPoints.json`.
-
 ### DeepFashion2
 
 #### KGDet
@@ -101,25 +93,6 @@ Test RepPoints with 1 gpu
 ```
 
 - Results files will be stored as `work_dirs/result_KGDet.json`.
-
-#### Run RepPoints (Baseline)
-
-**Train with 4 gpus**
-
-```shell
-./mmdetection/tools/dist_train.sh configs/reppoints_moment_r50_fpn_1x-deepfashion2.py 4 --validate --work_dir work_dirs/TRAIN_RepPoints
-```
-
-- The running log and checkpoints will be stored in the `work_dirs/TRAIN_RepPoints` directory according to the  argument `--work_dir`.
-- `--validate` evokes a validation section after each training epoch.
-
-**Test with 4 gpus**
-
-```shell
-./mmdetection/tools/dist_test.sh configs/reppoints_moment_r50_fpn_1x-deepfashion2.py checkpoints/RepPointsHeadKpPlus-no_kp_loss_epoch_12.pth 4 --json_out work_dirs/result_RepPoints.json --eval bbox
-```
-
-- Results files will be stored in `work_dirs/result_RepPoints.json`.
 
 ## Customization
 
