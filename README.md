@@ -3,13 +3,18 @@ This is an official implementation of the AAAI-2021 paper "[KGDet: Keypoint-Guid
 
 ![Architecture](img/arch.png)
 
-
 ## Installation
-To avoid problems, please install this repo in a pure `venv` or `conda` virtual environment.
+To avoid problems, please install this repo in a pure `conda` virtual environment.
 
-First, enter the root directory of this repo. Install necessary libraries.
+First, enter the root directory of this repo. Install `CUDA` and `PyTorch` with `conda`.
 
+```shell
+conda install -c pytorch -c conda-forge pytorch==1.4.0 torchvision==0.5.0 cudatoolkit-dev=10.1 
 ```
+
+Then, install other dependencies with `pip`.
+
+```shell
 pip install -r requirements.txt
 ```
 
@@ -17,7 +22,7 @@ pip install -r requirements.txt
 
 ```console
 cd deepfashion2_api/PythonAPI
-python setup.py install
+pip install -e .
 ```
 
 #### main code
@@ -28,13 +33,12 @@ Our code is based on [mmdetection](https://github.com/open-mmlab/mmdetection), w
 cd ../../mmdetection
 python setup.py develop
 ```
+
 Now the repo is ready, let's go back to the root directory.
 
-```
+```shell
 cd ..
 ```
-
-
 
 ## Data Preparation
 
@@ -44,7 +48,7 @@ If you need to run experiments on the entire DeepFashion2 dataset, please refer 
 
 After downloading and unpacking the dataset, please create a soft link from the code repository to the dataset's root directory.
 
-```
+```shell
 ln -s <root dir of DeepFashion2> data/deepfashion2
 ```
 
@@ -62,7 +66,7 @@ The checkpoints can be fetched from this OneDrive [link](https://shanghaitechedu
 
 Test KGDet with 1 gpu
 
-```
+```shell
 ./mmdetection/tools/dist_test.sh configs/kgdet_moment_r50_fpn_1x-demo.py checkpoints/KGDet_epoch-12.pth 1 --json_out work_dirs/demo_KGDet.json --eval bbox keypoints
 ```
 
@@ -71,7 +75,7 @@ Test KGDet with 1 gpu
 
 Test RepPoints with 1 gpu
 
-```
+```shell
 ./mmdetection/tools/dist_test.sh configs/reppoints_moment_r50_fpn_1x-demo.py checkpoints/RepPointsHeadKpPlus-no_kp_loss_epoch_12.pth 1 --json_out work_dirs/demo_RepPoints.json --eval bbox
 ```
 
@@ -83,7 +87,7 @@ Test RepPoints with 1 gpu
 
 **Train with 4 gpus**
 
-```
+```shell
 ./mmdetection/tools/dist_train.sh configs/kgdet_moment_r50_fpn_1x-deepfashion2.py 4 --validate --work_dir work_dirs/TRAIN_KGDet
 ```
 
@@ -92,7 +96,7 @@ Test RepPoints with 1 gpu
 
 **Test with 4 gpus**
 
-```
+```shell
 ./mmdetection/tools/dist_test.sh configs/kgdet_moment_r50_fpn_1x-deepfashion2.py checkpoints/KGDet_epoch-12.pth 4 --json_out work_dirs/result_KGDet.json --eval bbox keypoints
 ```
 
@@ -102,7 +106,7 @@ Test RepPoints with 1 gpu
 
 **Train with 4 gpus**
 
-```
+```shell
 ./mmdetection/tools/dist_train.sh configs/reppoints_moment_r50_fpn_1x-deepfashion2.py 4 --validate --work_dir work_dirs/TRAIN_RepPoints
 ```
 
@@ -111,7 +115,7 @@ Test RepPoints with 1 gpu
 
 **Test with 4 gpus**
 
-```
+```shell
 ./mmdetection/tools/dist_test.sh configs/reppoints_moment_r50_fpn_1x-deepfashion2.py checkpoints/RepPointsHeadKpPlus-no_kp_loss_epoch_12.pth 4 --json_out work_dirs/result_RepPoints.json --eval bbox
 ```
 
