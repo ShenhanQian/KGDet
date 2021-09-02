@@ -94,8 +94,20 @@ Test with 4 gpus
 
 ## Customization
 
-If you would like to run our model on your own data, you can imitate the structure of the demo_dataset (a image directory plus a JSON file), and adjust the arguments in the configuration file.
+If you would like to run our model on your own data, you can imitate the structure of the demo_dataset (an image directory plus a JSON file), and adjust the arguments in the configuration file.
 
 ## Acknowledgment
 
 This repo is built upon [RepPoints](https://github.com/microsoft/RepPoints) and [mmdetection](https://github.com/open-mmlab/mmdetection).
+
+```
+@inproceedings{qian2021kgdet,
+  title={KGDet: Keypoint-Guided Fashion Detection},
+  author={Qian, Shenhan and Lian, Dongze and Zhao, Binqiang and Liu, Tong and Zhu, Bohui and Li, Hai and Gao, Shenghua},
+  booktitle={Proceedings of the AAAI Conference on Artificial Intelligence},
+  volume={35},
+  number={3},
+  pages={2449--2457},
+  year={2021}
+}
+```
